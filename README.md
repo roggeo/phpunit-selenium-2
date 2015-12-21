@@ -11,3 +11,15 @@ Create a file composer.json with the following content:
     }
 }
 ```
+
+```bash
+composer install
+```
+    
+
+##Testing
+
+```bash
+cd vendor/bin
+phpunit TestLogin
+```
