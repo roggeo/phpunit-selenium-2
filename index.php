@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHPUnit Selenium 2 - Test login</title>
+        <title>PHPUnit Selenium 2</title>
     </head>
     <body>
-        <form action="login.php">
-            <input type="text" name="username" id="username" value="admin"/>
-            <input type="text" name="password" id="password" value="admin"/>
-        </form>
-    </body>    
+        <h1>PHPUnit Selenium 2</h1>
+        <label>
+            <a href="https://github.com/roggeo">https://github.com/roggeo</a>
+        </label>
+    </body>
 </html>

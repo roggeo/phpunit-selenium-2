@@ -1,5 +1,10 @@
 {
     "require": {
         "phpunit/phpunit-selenium": ">=1.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "App\\": "src/"
+        }
     }
 }
