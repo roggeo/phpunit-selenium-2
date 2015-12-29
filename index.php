@@ -5,8 +5,8 @@
     </head>
     <body>
         <form action="login.php">
-            <input type="text" name="username" id="username"/>
-            <input type="text" name="password" id="password"/>
+            <input type="text" name="username" id="username" value="admin"/>
+            <input type="text" name="password" id="password" value="admin"/>
         </form>
     </body>    
 </html>

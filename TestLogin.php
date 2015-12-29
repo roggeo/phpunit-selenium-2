@@ -11,6 +11,13 @@ class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
 
     }
     
+    public function testTitle()
+    {
+        $this->url('http://www.example.com/');
+        $this->assertEquals('Example WWW Page', $this->title());
+    }
+
+    
     public function testLoginForm() {
         
         $this->url('index.php');
@@ -18,17 +25,17 @@ class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
         $username = $this->byName('username');
         $password = $this->byName('password');
         
-        $this->assertEquals('', $username->value());
-        $this->assertEquals('', $password->value());
+        $this->assertEquals('admin', $username->value());
+        $this->assertEquals('admin', $password->value());
         
     }
     
     public function testLoginFormSubmit() {
         
         $this->url('index.php');
-        $action = $this->byCssSelector('form')->attribute('action');
         
-        $this->assertEquals('login.php', $action);
+        $action = $this->byCssSelector('form')->attribute('action');
+        $this->assertEquals("login.php", $action);
         
     }
     
