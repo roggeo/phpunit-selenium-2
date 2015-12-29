@@ -27,9 +27,13 @@ composer install
 Downloading Selenium Standalone Server in:
     http://docs.seleniumhq.org/download/
 
-Running server Selenium in Windows:
-    mv downloads/selenium-server-standalone-2.48.2.jar /usr/local/bin
-    java -jar selenium-server-standalone-2.48.2.jar
+Running server Selenium:
+
+```bash
+$ mv downloads/selenium-server-standalone-2.48.2.jar /usr/local/bin
+$ java -jar selenium-server-standalone-2.48.2.jar
+```
+
 
 ```bash
 $ cd vendor/bin
@@ -42,3 +46,5 @@ To running phpunit.xml.dist:
 ```bash
 $ phpunit
 ```
+
+For more, see: [here](https://phpunit.de/manual/3.7/en/selenium.html)
