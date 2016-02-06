@@ -11,7 +11,7 @@
     
     <body>
         
-        <form id="form register-form" method="post" action="">
+        <form id="register-form" method="post" action="">
             
             <label>Name</label>
             <input type="text" name="first_name"/>
