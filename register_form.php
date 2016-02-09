@@ -1,15 +1,38 @@
+<?php
+
+$post = (isset($_POST['action'])
+            and $_POST['action'] == "insert") ? $_POST['action'] : false;
+
+$is_validate = false;
+
+if($post) {
+    
+    //Check validation of form
+    //here code...
+    
+    $is_validate = true;
+    
+    
+}
+
+
+?>
 <html>
-    
-    
+        
     <head>
         
         <title>Form of Register</title>
         <link rel="stylesheet" href="public/css/form.css"/>
         
-    </head>
-    
+    </head>    
     
     <body>
+        
+        <?php
+        if ($is_validate):
+            print "<div id=\"message-form\">Form is valided!</div>";
+        endif;
+        ?>
         
         <form id="register-form" method="post" action="">
             
@@ -31,7 +54,7 @@
             <label>City</label>
             <input type="text" name="city"/>
 
-            <button type="submit">Register now</button>
+            <button type="submit" name="action" value="insert">Register now</button>
         
         </form>
         

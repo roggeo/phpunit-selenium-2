@@ -15,7 +15,7 @@ class RegisterFormTest extends Config {
     public function validDataRegister () {
         
         
-        return array(
+        return array(            
                 array(
                     'first_name' => 'Geovani',
                     'last_name'  => 'Santos',
@@ -55,9 +55,9 @@ class RegisterFormTest extends Config {
         
         $form = $this->byId('register-form');
         
-        foreach ($values as $attr_name => $value) {
+        foreach ($values as $attr => $val) {
             
-            $form->byName( $attr_name )->value( $value );
+            $form->byName( $attr )->value( $val );
             
         }
         
@@ -88,12 +88,12 @@ class RegisterFormTest extends Config {
     /**
      * @dataProvider validDataRegister
      */
-    public function testValidForm( array $inputs ) {
+    public function testValidForm( $inputs ) {
         
         
         $this->fillFormWithValues( $inputs );
         
-        $message = $this->byTag('body')->text();
+        $message = $this->byId('message-form')->text();
         
         $this->assertEquals('Form is valided!', $message);
         
