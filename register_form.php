@@ -1,20 +1,6 @@
 <?php
 
-$post = (isset($_POST['action'])
-            and $_POST['action'] == "insert") ? $_POST['action'] : false;
-
-$is_validate = false;
-
-if($post) {
-    
-    //Check validation of form
-    //here code...
-    
-    $is_validate = true;
-    
-    
-}
-
+$post = isset($_POST['action']) ? true : false;
 
 ?>
 <html>
@@ -29,7 +15,7 @@ if($post) {
     <body>
         
         <?php
-        if ($is_validate):
+        if ($post):
             print "<div id=\"message-form\">Form is valided!</div>";
         endif;
         ?>

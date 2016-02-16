@@ -14,15 +14,17 @@ class RegisterFormTest extends Config {
     
     public function validDataRegister () {
         
-        
-        return array(            
-                array(
-                    'first_name' => 'Geovani',
-                    'last_name'  => 'Santos',
-                    'email'      => 'email@email.com'
-                )
-        );
-        
+        return  array(            
+                    array(
+                        //First parameter
+                        array(                            
+                            'first_name' => 'Geovani',
+                            'last_name'  => 'Santos',
+                            'email'      => 'email@email.com'
+                        )
+                    ),          
+                );
+
         
     }
     
@@ -50,7 +52,7 @@ class RegisterFormTest extends Config {
      * 
      * @param array $values
      */
-    public function fillFormWithValues ( array $values) {
+    public function fillFormWithValues ( Array $values) {
         
         
         $form = $this->byId('register-form');
@@ -61,8 +63,7 @@ class RegisterFormTest extends Config {
             
         }
         
-        $form->submit();
-        
+        $this->byCssSelector('#register-form [name=action]')->click();
         
     }
     
@@ -90,13 +91,19 @@ class RegisterFormTest extends Config {
      */
     public function testValidForm( $inputs ) {
         
+        $this->url();
+        
+        //print_r($inputs);
         
         $this->fillFormWithValues( $inputs );
-        
+
         $message = $this->byId('message-form')->text();
         
         $this->assertEquals('Form is valided!', $message);
         
+        print "\nSuccess: ".$message;
+        
+
     }
     
 }
