@@ -2,15 +2,7 @@
 
 ##Install
 
-Create a file composer.json with the following content:
-    
-```json 
-{
-    "require": {
-        "phpunit/phpunit-selenium": ">=1.2"
-    }
-}
-```
+First download [phpunit-selenium-2.zip](https://github.com/roggeo/phpunit-selenium-2/archive/master.zip)
 
 Use Composer commands:
 
@@ -33,6 +25,20 @@ Running server Selenium:
 $ mv downloads/selenium-server-standalone-2.48.2.jar /usr/local/bin
 $ java -jar selenium-server-standalone-2.48.2.jar
 ```
+
+Selenium for Windows (Optional)
+
+Create file "selenium.bat" with code:
+
+```bat
+@ECHO OFF
+SET BIN_TARGET=%~dp0/selenium-server-standalone-2.48.2.jar
+java -jar "%BIN_TARGET%" %*
+```
+
+Create an environment variable pointing to the file folder .jar
+
+Ready, now you can running Selenium via command line.
 
 
 ```bash
