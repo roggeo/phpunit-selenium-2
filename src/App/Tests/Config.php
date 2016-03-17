@@ -5,7 +5,7 @@ namespace App\Tests;
 use PHPUnit_Extensions_Selenium2TestCase;
 
 class Config extends PHPUnit_Extensions_Selenium2TestCase {
-
+    
     public function setUp(){
     
         $this->setHost('localhost');

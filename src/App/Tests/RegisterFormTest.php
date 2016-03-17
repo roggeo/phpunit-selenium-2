@@ -20,7 +20,8 @@ class RegisterFormTest extends Config {
                         array(                            
                             'first_name' => 'Geovani',
                             'last_name'  => 'Santos',
-                            'email'      => 'email@email.com'
+                            'email'      => 'email@email.com',
+                            'phone'      => '+55 (62)8258-7493'
                         )
                     ),          
                 );
@@ -39,7 +40,7 @@ class RegisterFormTest extends Config {
             array('text', 'first_name'),
             array('text', 'last_name'),
             array('text', 'email'),
-            //array('text', 'phone'),
+            array('text', 'phone'),
             //array('text', 'country'),
             //array('text', 'city'),
             
@@ -47,6 +48,22 @@ class RegisterFormTest extends Config {
         
     }
     
+    /**
+     * @test
+     */
+    public function linkCss() {
+        
+        
+        $this->url();
+        
+        $href_css = $this->getBrowserUrl().'/public/css/form.css';
+        
+        $tag_link = $this->byTag('link');
+        
+        $this->assertEquals($tag_link->attribute('href'), $href_css);
+        
+        
+    }
     
     /**
      * 
@@ -72,8 +89,9 @@ class RegisterFormTest extends Config {
      * Verify whether all field are filled
      * 
      * @dataProvider valuesToAttributeName
+     * @test
      */
-    public function testVerifyExistsFields( $type, $attr_name ) {
+    public function verifyExistsFields( $type, $attr_name ) {
         
         $this->url();
 
@@ -88,8 +106,9 @@ class RegisterFormTest extends Config {
     
     /**
      * @dataProvider validDataRegister
+     * @test
      */
-    public function testValidForm( $inputs ) {
+    public function validForm( $inputs ) {
         
         $this->url();
         
