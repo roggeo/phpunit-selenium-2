@@ -11,8 +11,15 @@ Use Composer commands:
 [Install Composer to Windows](https://getcomposer.org/doc/00-intro.md#using-the-installer)
 
 ```bash
+php composer.phar update
+```
+
+Or use
+
+```bash
 composer install
 ```
+
 
 ##Testing
 
@@ -43,7 +50,7 @@ Ready, now you can running Selenium via command line.
 
 ```bash
 $ cd vendor/bin
-phpunit ../../src/App/Tests
+$ phpunit ../../src/App/Tests
 ```
 
 or if exists variable of enviroment "phpunit", use in the root.
